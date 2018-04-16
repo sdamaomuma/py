@@ -1,0 +1,44 @@
+.head_pg{
+    height: 40px;
+}
+.left_windows{
+    width:200px;
+    float:left;
+}
+.right_windows{
+    width:800px;
+    height: 600px;
+    float: left;
+    border: 1px solid black;
+}
+.hide_div_right_style{
+    width: 800px;
+    height: 700px;
+    background-color: white;
+    position: absolute;/* 以浏览器边框定位 */
+    left: 220px;
+    top: 60px;
+    border: 1px solid black;
+}
+.one_one_head_style{
+    width: 796px;
+    height: 200px;
+    background-color:white;
+    position:absolute;  /* 当外围标签有absolute后，absolute定位就是以外围标签为准*/
+    left: 1px;
+    top:1px;
+    border:1px solid black;
+}
+.frame{
+    border-bottom: 1px solid black;
+}
+.hide_windows{
+            display: none;
+        }
+.insert_key_style{
+    width: 25%;
+    float: left;
+}
+.insert_value_style{
+    float: left;
+}

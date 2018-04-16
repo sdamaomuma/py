@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <table id="table_1_1">
+
+    </table>
+<script src="../static/jquery-1.12.4.js"></script>
+<script>
+    var list_1 = [{'name':'zhangsan','age':'18'},{'name':'lisi','age':'20'}]
+    for( var item in list_1){
+        $('#table_1_1').append('<tr><td>'+
+                list_1[item]['name'] +
+                '</td><td>'+list_1[item]['age']+
+                '</td></tr>')
+    }
+</script>
+</body>
+</html>
