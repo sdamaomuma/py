@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/jquery.bxslider.css">
+</head>
+<body>
+    <ul class="bxslider">
+        {% for item in obj %}
+            <li>
+                <a href="{{ item.href }}">
+                    <img src="{{ item.img_url }}" alt="{{ item.name }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script src="/static/jquery.bxslider.js"></script>
+    <script>
+        /* 自动执行函数，加载bxslider插件*/
+        $(function(){
+            $('.bxslider').bxSlider({
+                auto:true
+            });
+        });
+    </script>
+</body>
+</html>
