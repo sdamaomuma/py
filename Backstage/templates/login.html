@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="height: 30px;"></div>
+        <div class="row" style="height: 70px;">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <a href="/register/">跳转到注册页面</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">用户名：</label>
+                        <input type="text" placeholder="请输入用户名" id="username" class="form-control">
+                        <label class="control-label">密码：</label>
+                        <input type="password" placeholder="请输入密码" id="password" class="form-control">
+                        <label class="control-label" style="height: 20px;"></label>
+                        <input type="button" value="登陆" class="form-control btn-primary" style="width:80px;" id="confirm">
+                        <label class="control-label" style="color: red;" id="message"></label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/static/md5.js"></script>
+    <script>
+        $('#confirm').click(function(){
+            $.ajax({
+                url: "/login/",
+                type:"POST",
+                data:{
+                    'username':$('#username').val(),
+                    'password':hex_md5($('#password').val())
+                },
+                success:function(data){
+                    if(data=="ok"){
+                        window.location.href = "/home/";
+                    }else if(data=="user_error"){
+                        $('#message').text('用户名或密码错误！')
+                    }
+                    else{
+                        alert(data)
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

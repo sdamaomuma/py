@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合营帐管理系统</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <div><!-- 最外层边框  -->
+        <div class="head_pg">
+            <div style="float: left;width: 660px;padding-left: 100px;">当前用户：root</div>
+            <div style="float: left;">
+                <a href="#">修改密码</a> | <a href="#">退出系统</a>
+            </div>
+        </div>
+        <div class="left_windows">
+            <div onclick="display_hide_left('hide_div_left_1')" class="frame">
+                订单
+            </div>
+            <div id="hide_div_left_1" class="hide_windows">
+                <div onclick="display_hide_right('hide_div_right_1.1')">(1)订单管理</div>
+                <div onclick="display_hide_right('hide_div_right_1.2')">(2)</div>
+                <div onclick="display_hide_right('hide_div_right_1.3')">(3)</div>
+                <div onclick="display_hide_right('hide_div_right_1.4')">(4)</div>
+            </div>
+            <!-- divison -->
+            <div onclick="display_hide_left('hide_div_left_2')" class="frame">
+                用户管理
+            </div>
+            <div id="hide_div_left_2" class="hide_windows">
+                <div onclick="display_hide_right('hide_div_right_2.1')">(1)修改用户密码</div>
+                <div onclick="display_hide_right('hide_div_right_2.2')">(2)用户冻结</div>
+                <div onclick="display_hide_right('hide_div_right_2.3')">(3)用户IP查询</div>
+                <div onclick="display_hide_right('hide_div_right_2.4')">(4)用户资料修改</div>
+            </div>
+            <!-- divison -->
+            <div onclick="display_hide_left('hide_div_left_3')" class="frame">
+                图片管理
+            </div>
+            <div id="hide_div_left_3" class="hide_windows">
+                <div onclick="display_hide_right('hide_div_right_3.1')">(1)用户个性头像审核</div>
+                <div onclick="display_hide_right('hide_div_right_3.2')">(2)房间活动图片审核</div>
+                <div onclick="display_hide_right('hide_div_right_3.3')">(3)房间个性头像审核</div>
+                <div onclick="display_hide_right('hide_div_right_3.4')">(4)</div>
+            </div>
+            <!-- divison -->
+            <div onclick="display_hide_left('hide_div_left_4')" class="frame">
+                聊天室管理
+            </div>
+            <div id="hide_div_left_4" class="hide_windows">
+                <div onclick="display_hide_right('hide_div_right_4.1')">(1)聊天室管理</div>
+                <div onclick="display_hide_right('hide_div_right_4.2')">(2)室主认证申请</div>
+                <div onclick="display_hide_right('hide_div_right_4.3')">(3)聊天室调端口</div>
+                <div onclick="display_hide_right('hide_div_right_4.4')">(4)聊天室资料更改审核</div>
+            </div>
+            <!-- divison -->
+            <div onclick="display_hide_left('hide_div_left_5')" class="frame">
+                添加数据
+            </div>
+            <div id="hide_div_left_5" class="hide_windows">
+                <div onclick="display_hide_right('hide_div_right_5.1')">(1)dw_money_flow</div>
+                <div onclick="display_hide_right('hide_div_right_5.2')">(2)present_prop_tbl</div>
+                <div onclick="display_hide_right('hide_div_right_5.3')">(3)</div>
+                <div onclick="display_hide_right('hide_div_right_5.4')">(4)</div>
+            </div>
+        </div>
+        <div class="right_windows">
+            <div id="hide_div_right_1.1" class="hide_div_right_style hide_windows">
+                <div class="one_one_head_style">
+                    <form>
+                        <div style="position:absolute;width: 20%;top: 5%;text-align:right;">
+                            开始日期：
+                        </div>
+                        <div style="position:absolute;width: 20%;top: 5%;left: 20%;">
+                            <input type="text" id="start_time">
+                        </div>
+                        <div style="position:absolute;width: 25%;top: 5%;left: 40%;text-align:right;">
+                            结束时期：
+                        </div>
+                        <div style="position:absolute;width: 35%;top: 5%;left: 65%;">
+                            <input type="text" id="end_time">
+                        </div>
+
+
+                        <div style="position:absolute;width: 20%;top: 20%;text-align:right;">
+                            用户都秀号：
+                        </div>
+                        <div style="position:absolute;width: 20%;top: 20%;left: 20%;">
+                            <input type="text" id="uin">
+                        </div>
+                        <div style="position:absolute;width: 25%;top: 20%;left: 40%;text-align:right;">
+                            订单类型：
+                        </div>
+                        <div style="position:absolute;width: 35%;top: 20%;left: 65%;">
+                            <select name="order_type">
+                                <option value="1">全部</option>
+                                <option value="2">聊天室</option>
+                                <option value="3">蓝钻</option>
+                                <option value="4">紫钻</option>
+                                <option value="5">靓号</option>
+                                <option value="6">秀币</option>
+                            </select>
+                        </div>
+
+
+                        <div style="position:absolute;width: 20%;top: 35%;text-align:right;">
+                            销售方：
+                        </div>
+                        <div style="position:absolute;width: 20%;top: 35%;left: 20%;">
+                            <select name="sale_type">
+                                <option value="1">全部</option>
+                                <option value="2">官方</option>
+                                <option value="3">室主代理商</option>
+                                <option value="4">全网代理商</option>
+                            </select>
+                        </div>
+                        <div style="position:absolute;width: 25%;top: 35%;left: 40%;text-align:right;">
+                            状态：
+                        </div>
+                        <div style="position:absolute;width: 35%;top: 35%;left: 65%;">
+                            <select name="status">
+                                <option value="1">全部</option>
+                                <option value="2">成功</option>
+                                <option value="3">失败</option>
+                            </select>
+                        </div>
+
+
+                        <div style="position:absolute;width: 20%;top: 50%;text-align:right;">
+                            支付方式：
+                        </div>
+                        <div style="position:absolute;width: 20%;top: 50%;left: 20%;">
+                            <select name="payment_type">
+                                <option value="1">全部</option>
+                                <option value="2">秀币</option>
+                                <option value="3">秀豆</option>
+                                <option value="4">支付宝</option>
+                                <option value="5">微信支付</option>
+                            </select>
+                        </div>
+                        <div style="position:absolute;width: 25%;top: 50%;left: 40%;text-align:right;">
+                            全网代理商都秀号：
+                        </div>
+                        <div style="position:absolute;width: 35%;top: 50%;left: 65%;">
+                            <input type="text" id="full_network_parment_uin">
+                        </div>
+
+
+                        <div style="position:absolute;width: 20%;top: 65%;text-align:right;">
+                            室主代理商房间号：
+                        </div>
+                        <div style="position:absolute;width: 20%;top: 65%;left: 20%;">
+                            <input type="text" id="proxy_room_id">
+                        </div>
+                        <div style="position:absolute;width: 25%;top: 65%;left: 40%;text-align:right;">
+                            室主代理商都秀号：
+                        </div>
+                        <div style="position:absolute;width: 35%;top: 65%;left: 65%;">
+                            <input type="text" id="proxy_uin">
+                        </div>
+
+
+                        <div style="position:absolute;width: 20%;top: 80%;text-align:right;">
+                            订单号：
+                        </div>
+                        <div style="position:absolute;width: 20%;top: 80%;left: 20%;">
+                            <input type="text" id="order_id">
+                        </div>
+                        <div style="position:absolute;width: 25%;top: 80%;left: 40%;text-align:right;">
+                            <input type="button" value="查询">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="hide_div_right_1.2" class="hide_div_right_style hide_windows">
+                1.2
+            </div>
+            <div id="hide_div_right_1.3" class="hide_div_right_style hide_windows">
+                1.3
+            </div>
+            <div id="hide_div_right_1.4" class="hide_div_right_style hide_windows">
+                1.4
+            </div>
+            <div id="hide_div_right_2.1" class="hide_div_right_style hide_windows">
+                2.1
+            </div>
+            <div id="hide_div_right_2.2" class="hide_div_right_style hide_windows">
+                2.2
+            </div>
+            <div id="hide_div_right_2.3" class="hide_div_right_style hide_windows">
+                2.3
+            </div>
+            <div id="hide_div_right_2.4" class="hide_div_right_style hide_windows">
+                2.4
+            </div>
+            <div id="hide_div_right_3.1" class="hide_div_right_style hide_windows">
+                3.1
+            </div>
+            <div id="hide_div_right_3.2" class="hide_div_right_style hide_windows">
+                3.2
+            </div>
+            <div id="hide_div_right_3.3" class="hide_div_right_style hide_windows">
+                3.3
+            </div>
+            <div id="hide_div_right_3.4" class="hide_div_right_style hide_windows">
+                3.4
+            </div>
+            <div id="hide_div_right_4.1" class="hide_div_right_style hide_windows">
+                4.1
+            </div>
+            <div id="hide_div_right_4.2" class="hide_div_right_style hide_windows">
+                4.2
+            </div>
+            <div id="hide_div_right_4.3" class="hide_div_right_style hide_windows">
+                4.3
+            </div>
+            <div id="hide_div_right_4.4" class="hide_div_right_style hide_windows">
+                4.4
+            </div>
+            <div id="hide_div_right_5.1" class="hide_div_right_style hide_windows">
+                <div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">consume_type</div>
+                        <div class="insert_value_style"><input type="text" id="consume_type"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">order_id</div>
+                        <div class="insert_value_style"><input type="text" id="order_id"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">consume_uin</div>
+                        <div class="insert_value_style"><input type="text" id="consume_uin"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">accept_uin</div>
+                        <div class="insert_value_style"><input type="text" id="accept_uin"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">payment_id</div>
+                        <div class="insert_value_style"><input type="text" id="payment_id"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">fee</div>
+                        <div class="insert_value_style"><input type="text" id="fee"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">money</div>
+                        <div class="insert_value_style"><input type="text" id="money"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">before_money</div>
+                        <div class="insert_value_style"><input type="text" id="before_money"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <div class="insert_key_style">after_money</div>
+                        <div class="insert_value_style"><input type="text" id="after_money"></div>
+                    </div>
+                    <div style="padding-left:10%;padding-top: 5%;">
+                        <input type="button" value="提交" id="submit">
+                        <input type="button" value="清空" id="clear">
+                    </div>
+                </div>
+            </div>
+            <div id="hide_div_right_5.2" class="hide_div_right_style hide_windows">
+                5.2
+            </div>
+            <div id="hide_div_right_5.3" class="hide_div_right_style hide_windows">
+                5.3
+            </div>
+            <div id="hide_div_right_5.4" class="hide_div_right_style hide_windows">
+                5.4
+            </div>
+        </div>
+    </div>
+    <script src="/static/jquery-1.11.1.js"></script>
+    <script src="/static/index.js"></script>
+    <script src="/static/laydate/laydate.js"></script>
+    <script>
+        //时间控件必须写在html里，不能写在index.js里
+        laydate.render({
+            elem: '#start_time',
+            type:'datetime'
+        });
+        laydate.render({
+            elem:'#end_time',
+            type:'datetime'
+        });
+    </script>
+</body>
+</html>
